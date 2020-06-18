@@ -1071,7 +1071,7 @@ fn test_assert_panics_with_too_many_requests() {
 
 #[test]
 #[should_panic(
-    expected = "\n> Expected 1 request(s) to:\n\r\nGET /hello\r\n\n...but received 0\n\n> The last unmatched request was:\n\r\nGET /bye\r\n\n> Difference:\n\n\u{1b}[31mGET /hello\u{1b}[0m\n\u{1b}[32mGET\u{1b}[0m \u{1b}[42;37m/bye\u{1b}[0m\n\n\n"
+    expected = "\n> Expected 1 request(s) to:\n\r\nGET /hello\r\n\n...but received 0\n\n> The last unmatched request was:\n\r\nGET /bye\r\n\n> Difference:\n\n\n\n\u{1b}[2;44;30m... ...   @@ -1,2 +1,2 @@\u{1b}[0m\n001 001   \n\u{1b}[40;31m002      \u{1b}[1m-\u{1b}[0m\u{1b}[40;31m\u{1b}[0m\u{1b}[40;31m\u{1b}[2mG\u{1b}[0m\u{1b}[40;31m\u{1b}[2mE\u{1b}[0m\u{1b}[40;31m\u{1b}[2mT\u{1b}[0m\u{1b}[40;31m\u{1b}[2m \u{1b}[0m\u{1b}[40;31m\u{1b}[2m/\u{1b}[0m\u{1b}[40;31m\u{1b}[7mh\u{1b}[0m\u{1b}[40;31m\u{1b}[2me\u{1b}[0m\u{1b}[40;31m\u{1b}[7ml\u{1b}[0m\u{1b}[40;31m\u{1b}[7ml\u{1b}[0m\u{1b}[40;31m\u{1b}[7mo\u{1b}[0m\u{1b}[40;31m\u{1b}[0m\n\u{1b}[40;32m    002  \u{1b}[1m+\u{1b}[0m\u{1b}[40;32m\u{1b}[0m\u{1b}[40;32m\u{1b}[2mG\u{1b}[0m\u{1b}[40;32m\u{1b}[2mE\u{1b}[0m\u{1b}[40;32m\u{1b}[2mT\u{1b}[0m\u{1b}[40;32m\u{1b}[2m \u{1b}[0m\u{1b}[40;32m\u{1b}[2m/\u{1b}[0m\u{1b}[40;32m\u{1b}[7mb\u{1b}[0m\u{1b}[40;32m\u{1b}[7my\u{1b}[0m\u{1b}[40;32m\u{1b}[2me\u{1b}[0m\u{1b}[40;32m\u{1b}[0m\n\n"
 )]
 #[cfg(feature = "color")]
 fn test_assert_with_last_unmatched_request() {
@@ -1098,7 +1098,7 @@ fn test_assert_with_last_unmatched_request() {
 
 #[test]
 #[should_panic(
-    expected = "\n> Expected 1 request(s) to:\n\r\nGET /hello\r\n\n...but received 0\n\n> The last unmatched request was:\n\r\nGET /bye\r\nauthorization: 1234\r\naccept: text\r\n\n> Difference:\n\n\u{1b}[31mGET /hello\u{1b}[0m\n\u{1b}[32mGET\u{1b}[0m \u{1b}[42;37m/bye\nauthorization: 1234\naccept: text\u{1b}[0m\n\n\n"
+    expected = "\n> Expected 1 request(s) to:\n\r\nGET /hello\r\n\n...but received 0\n\n> The last unmatched request was:\n\r\nGET /bye\r\nauthorization: 1234\r\naccept: text\r\n\n> Difference:\n\n\n\n\u{1b}[2;44;30m... ...   @@ -1,2 +1,4 @@\u{1b}[0m\n001 001   \n\u{1b}[40;31m002      \u{1b}[1m-\u{1b}[0m\u{1b}[40;31m\u{1b}[0m\u{1b}[40;31m\u{1b}[2mG\u{1b}[0m\u{1b}[40;31m\u{1b}[2mE\u{1b}[0m\u{1b}[40;31m\u{1b}[2mT\u{1b}[0m\u{1b}[40;31m\u{1b}[2m \u{1b}[0m\u{1b}[40;31m\u{1b}[2m/\u{1b}[0m\u{1b}[40;31m\u{1b}[7mh\u{1b}[0m\u{1b}[40;31m\u{1b}[2me\u{1b}[0m\u{1b}[40;31m\u{1b}[7ml\u{1b}[0m\u{1b}[40;31m\u{1b}[7ml\u{1b}[0m\u{1b}[40;31m\u{1b}[7mo\u{1b}[0m\u{1b}[40;31m\u{1b}[0m\n\u{1b}[40;32m    002  \u{1b}[1m+\u{1b}[0m\u{1b}[40;32m\u{1b}[0m\u{1b}[40;32m\u{1b}[2mG\u{1b}[0m\u{1b}[40;32m\u{1b}[2mE\u{1b}[0m\u{1b}[40;32m\u{1b}[2mT\u{1b}[0m\u{1b}[40;32m\u{1b}[2m \u{1b}[0m\u{1b}[40;32m\u{1b}[2m/\u{1b}[0m\u{1b}[40;32m\u{1b}[7mb\u{1b}[0m\u{1b}[40;32m\u{1b}[7my\u{1b}[0m\u{1b}[40;32m\u{1b}[2me\u{1b}[0m\u{1b}[40;32m\u{1b}[0m\n\u{1b}[40;32m    003  \u{1b}[1m+\u{1b}[0m\u{1b}[40;32m\u{1b}[0m\u{1b}[40;32mauthorization: 1234\u{1b}[0m\n\u{1b}[40;32m    004  \u{1b}[1m+\u{1b}[0m\u{1b}[40;32m\u{1b}[0m\u{1b}[40;32maccept: text\u{1b}[0m\n\n"
 )]
 #[cfg(feature = "color")]
 fn test_assert_with_last_unmatched_request_and_headers() {
